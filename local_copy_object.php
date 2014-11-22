@@ -141,7 +141,7 @@ function copyLotOfObjects()//$template_object)
 	$source_object_id = $_REQUEST['object_id'];
 	$source_object = spotEntity ('object', $source_object_id);
 	amplifyCell($source_object);
-	if ( function_exists ( 'amplifyCell_object_Backend_Port' ) )
+	if ( function_exists ( 'amplifyCell_object_Backend_Port' ) && function_exists ('linkmgmt_linkPorts') )
 	{ 
 		amplifyCell_object_Backend_Port($source_object);
 	} 
@@ -358,3 +358,4 @@ function oneLiner ($code, $args = array())
         return $ret;
 }
 ?>
+
